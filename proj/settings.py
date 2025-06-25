@@ -44,9 +44,11 @@ INSTALLED_APPS = [
     # 3-rd party
     'rest_framework',
     'rest_framework_simplejwt',
+    'django_filters',
 
     # local
     'applications.users.apps.UsersConfig',
+    'applications.orders.apps.OrdersConfig',
 ]
 
 MIDDLEWARE = [
