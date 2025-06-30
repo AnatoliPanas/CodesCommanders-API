@@ -87,19 +87,18 @@ WSGI_APPLICATION = 'proj.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-MYSQL = env.bool('MYSQL', default=False)
+PostgreSQL = env.bool('PostgreSQL', default=False)
 
-if MYSQL:
+if PostgreSQL:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': env('MYSQL_DB'),
-            'USER': env('MYSQL_USER'),
-            'PASSWORD': env('MYSQL_PASSWORD'),
-            'HOST': 'dbMySQL',
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': env('POSTGRES_DB'),
+            'USER': env('POSTGRES_USER'),
+            'PASSWORD': env('POSTGRES_PASSWORD'),
+            'HOST': 'dbPostgres',
             # 'HOST': 'localhost',
-            'PORT': 3306,
-            'OPTIONS': {'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"'},
+            'PORT': 5432,
         }
     }
 else:
